@@ -1,0 +1,67 @@
+insert into producto(idCategoria, nombreProducto, descripcionProducto, precioProducto) values
+  (9, 'Roberto Amillo', null, 3.50),
+  (9, 'La Copa', null, 3.50),
+  (9, 'Martínez Lacuesta', null, 3.50),
+  (9, 'Yzaguirre Blanco', null, 3.50),
+  (9, 'Yzaguirre Rojo', null, 3.50),
+  (9, 'Yzaguirre Rosado', null, 3.50),
+  (9, 'Yzaguirre Reserva Rojo', null, 4.00),
+  (9, 'Yzaguirre 1884', null, 5.50),
+  (9, 'Martini Riserva Speciale', null, 4.00),
+  (9, 'Martini Rosso', null, 3.50),
+  (9, 'Falset', null, 3.50),
+  (9, 'Lacuesta Rojo', null, 3.50),
+  (9, 'Dos Deus', null, 5.00),
+  (9, 'Atxa', null, 3.50),
+  (9, 'ST. Petroni', null, 4.50),
+  (9, 'Txurrut', null, 3.50),
+  (9, 'Medusa', null, 3.00),
+  (9, 'Zecchini', null, 4.00),
+  (9, 'Golfo', null, 4.00),
+  (9, 'Miró', null, 4.00);
+
+  insert into producto(idCategoria, nombreProducto, descripcionProducto, precioProducto) values
+    (20, 'Jamón Ibérico de Bellota', null, 5.00),
+    (20, 'Lomo Ibérico de Bellota', null, 5.00),
+    (20, 'Chorizo Ibérico de Bellota', null, 3.50),
+    (20, 'Salchichón Ibérico de Bellota', null, 3.50),
+    (20, 'Lomito Ibérico de Bellota', null, 5.00),
+    (20, 'Lomo Doblao Ibérico de Bellota', null, 5.50),
+    (20, 'Queso de Oveja Curado', null, 3.50),
+    (20, 'Queso de Cabra Curado', null, 3.50),
+    (20, 'Queso de Cabra en Rulo', null, 3.00),
+    (20, 'Torta de Tierra de Barros', null, 3.50);
+
+  insert into producto(idCategoria, nombreProducto, descripcionProducto, precioProducto) values
+    (10, 'Jamón Ibérico de Bellota', null, 22.50),
+    (10, 'Lomo Ibérico de Bellota', null, 22.50),
+    (10, 'Chorizo Ibérico de Bellota', null, 14.50),
+    (10, 'Salchichón Ibérico de Bellota', null, 14.50),
+    (10, 'Lomito Ibérico de Bellota', null, 23.00),
+    (10, 'Lomo Doblao Ibérico de Bellota', null, 23.50),
+    (10, 'Queso de Oveja Curado', null, 14.50),
+    (10, 'Queso de Cabra Curado', null, 14.00),
+    (10, 'Surtido de Ibéricos y Queso', null, 21.00),
+    (10, 'Surtido de Quesos', null, 20.00);
+
+  insert into producto(idCategoria, nombreProducto, descripcionProducto, precioProducto) values
+    (13, 'Ensalada de Ahumados con Cogollos de Lechuga', null, 14.50),
+    (13, 'Ensalada de Micuit de Pato', 'con Frutos Rojos, Pasas y Nueces', 14.50),
+    (13, 'Ensalada Templada de Pulpo y Langostinos', null, 14.50),
+    (13, 'Ensalada de Espinacas', 'con Bacon, Rulo de Cabra y Piñones', 14.50),
+    (13, 'Ensalada Tropical', 'con Frutos Secos, Tomates Cherry, Manzana, Piña, Melocoton, Mozzarela y Kiwi', 14.50),
+    (13, 'Croquetas de Boletus y Jamón Ibérico', null, 12.00),
+    (13, 'Croquetas de Bacalao', null, 12.00),
+    (13, 'Croquetas de Pollo y Bacón', null, 12.00),
+    (13, 'Croquetas Surtidas', null, 12.00),
+    (13, 'Revuelto Bodega', 'con Esparragos Trigueros, Gambas, Boletus, Jamón y Pimientos Asados', 12.50),
+    (13, 'Revuelto de Gulas', 'con Gambas y Pulpo', 13.50),
+    (13, 'Lacón con Pimentón de la Vera', null, 11.00),
+    (13, 'Surtido de Ahumados', null, 17.00),
+    (13, 'Bacalao Dorado', null, 11.00),
+    (13, 'Bacalao a la Nata', 'con Gambas y Espinacas', 11.50),
+    (13, 'Gambones a la Plancha', null, 18.50),
+    (13, 'Pulpo Bodega', null, 20.00),
+    (13, 'Tartar de Atún', null, 20.00);
+  insert into producto(idCategoria, nombreProducto, descripcionProducto, precioProducto) values
+    (13, 'Ensalada de Ahumados con Cogollos de Lechuga', null, 14.50),

@@ -1,27 +1,33 @@
-class Vista {
+export class Vista {
   constructor(main){
-    this.logMain = getElementByClassName('logMain')[0];
-    this.tabs = querySelectorAll('.tabs ul li');
-    this.tabsText = querySelectorAll('.tabs p');
+    this.controlador = main;
+
+    this.tabs = document.querySelectorAll('.tabs ul li');
+    this.tabsText = document.querySelectorAll('.tabs>div');
+
+    this.eventos();
+  }
+  eventos(){
+    this.tabs.forEach((tab, i)=>{
+      this.tabs[i].addEventListener('click', this.activarTab.bind(this, i));
+    });
   }
   mostrar(elemento, sw){
     if(sw){
-      elemento.style.display = 'flex';
+      elemento.style.display = 'block';
     }
     if(!sw){
       elemento.style.display = 'none';
     }
   }
-  activarTab(){
+
+
+  activarTab(i){
     this.tabs.forEach((tab, i)=>{
-      this.tabs[i].addEventListener('click', ()=>{
-        this.tabs.forEach((tab, i)=>{
-          this.tabs[i].classList.remove('tabActivo');
-          this.mostrar(this.tabsText[i], false);
-        });
-        this.tabs[i].classList.remove('tabActivo');
-        this.mostrar(this.tabsText[i], true);
-      });
+      this.tabs[i].classList.remove('tabActivo');
+      this.mostrar(this.tabsText[i], false);
     });
+    this.tabs[i].classList.add('tabActivo');
+    this.mostrar(this.tabsText[i], true);
   }
 }
