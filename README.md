@@ -1,7 +1,7 @@
 BarManWay (v.0.0) [beta]
 
-*author: alexpreciado94 <alexpreciado94@hotmail.com>
-*copyright: © 2022 All Rights Reserved
+*author:* alexpreciado94 <alexpreciado94@hotmail.com>
+*copyright:* © 2022 All Rights Reserved
 
 La última versión estable de carácter público es la compartida con la escuela
 “Virgen de Guadalupe” para su uso docente y almacenada en el host que nos pro-
