@@ -32,8 +32,8 @@ create table usuario_negocio(
   idUsuario tinyint unsigned not null,
   idNegocio tinyint unsigned not null,
   constraint pk_usuarioNegocio primary key (idUsuario, idNegocio),
-  constraint fk_idUsuarioNegocio foreign key (idUsuario) references usuario(idUsuario) on update on delete cascade,
-  constraint fk_idNegocioUsuario foreign key (idNegocio) references negocio(idNegocio) on update on delete cascade
+  constraint fk_idUsuarioNegocio foreign key (idUsuario) references usuario(idUsuario) on update cascade on delete cascade,
+  constraint fk_idNegocioUsuario foreign key (idNegocio) references negocio(idNegocio) on update cascade on delete cascade
 );
 
 create table categoria(
@@ -41,7 +41,7 @@ create table categoria(
   idCategoria smallint unsigned primary key auto_increment,
   nombreCategoria varchar(255) not null,
   incrementoBarraMesa decimal(5,2) not null default 0,
-  constraint fk_idNegocio foreign key (idNegocio) references negocio(idNegocio) on update on delete cascade
+  constraint fk_idNegocio foreign key (idNegocio) references negocio(idNegocio) on update cascade on delete cascade
 );
 
 create table producto(
@@ -50,7 +50,7 @@ create table producto(
   nombreProducto varchar(255) not null,
   descripcionProducto varchar(255) null,
   precioProducto decimal(5,2) not null,
-  constraint fk_idCategoria foreign key (idCategoria) references categoria(idCategoria) on update on delete cascade
+  constraint fk_idCategoria foreign key (idCategoria) references categoria(idCategoria) on update cascade on delete cascade
 );
 
 create table alergeno(
@@ -63,6 +63,6 @@ create table producto_alergeno(
   idProducto smallint unsigned not null,
   idAlergeno tinyint unsigned not null,
   constraint pk_productoAlergeno primary key (idProducto, idAlergeno),
-  constraint fk_idProductoAlergeno foreign key (idProducto) references producto(idProducto) on update on delete cascade,
-  constraint fk_idAlergenoProducto foreign key (idAlergeno) references alergeno(idAlergeno) on update on delete cascade
+  constraint fk_idProductoAlergeno foreign key (idProducto) references producto(idProducto) on update cascade on delete cascade,
+  constraint fk_idAlergenoProducto foreign key (idAlergeno) references alergeno(idAlergeno) on update cascade on delete cascade
 );

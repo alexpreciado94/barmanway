@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<!--
+  @author alexpreciado94 <alexpreciado94@hotmail.com>
+  @copyright © 2022 All Rights Reserved
+-->
 <?php
   class Index {
     function __construct(){
@@ -7,13 +12,19 @@
   }
   $index = new Index();
 ?>
-<!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="author" content="alexpreciado94" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
     <title><?php echo $index->controlador->negocio['nombreNegocio'] ?></title>
     <link rel="stylesheet" href="./css/style.css">
     <style>
+      a{
+        color: #<?php echo $index->controlador->negocio['colorNegocio'] ?>;
+      }
       nav ul li a:hover{
         border-top: 5px solid #<?php echo $index->controlador->negocio['colorNegocio'] ?>;
       }
@@ -23,6 +34,20 @@
       }
       #carta .tabs ul li.tabActivo{
         background-color: #<?php echo $index->controlador->negocio['colorNegocio'] ?>;
+      }
+      #imgSection{
+        background-image: url(<?php echo './img/imgdb/'.$index->controlador->negocio['idNegocio'].'/'.$index->controlador->negocio['imgParallaxNegocio'] ?>);
+      }
+      #carta .tabs div:target a{
+        background-color: #<?php echo $index->controlador->negocio['colorNegocio'] ?>;
+        box-shadow: 1px 1px 5px gray;
+      }
+      #carta .tabs div a:hover{
+        background-color: #<?php echo $index->controlador->negocio['colorNegocio'] ?>;
+        box-shadow: 1px 1px 5px gray;
+      }
+      footer .contenedor .social a:hover{
+        color: #<?php echo $index->controlador->negocio['colorNegocio'] ?>;
       }
     </style>
   </head>
@@ -57,7 +82,7 @@
           </article>
         </div>
       </section>
-      <section id="imgSection" style=<?php echo '"background-image: url(./img/imgdb/'.$index->controlador->negocio['idNegocio'].'/'.$index->controlador->negocio['imgParallaxNegocio'].');"' ?>>
+      <section id="imgSection">
 
       </section>
       <section id="carta">
@@ -65,11 +90,11 @@
           <?php
             foreach ($index->controlador->productos as $i => $producto){
               if($i == 0){
-                echo '<div><a href="#'.$producto['nombreCategoria'].'">'.$producto['nombreCategoria'].'</a>';
+                echo '<div id="'.$producto['nombreCategoria'].'"><a href="#'.$producto['nombreCategoria'].'">'.$producto['nombreCategoria'].'</a><div>';
                 $categoria = $producto['nombreCategoria'];
               }
               if($categoria != $producto['nombreCategoria']){
-                echo '</div><div><a href="#'.$producto['nombreCategoria'].'">'.$producto['nombreCategoria'].'</a>';
+                echo '</div></div><div id="'.$producto['nombreCategoria'].'"><a href="#'.$producto['nombreCategoria'].'">'.$producto['nombreCategoria'].'</a><div>';
                 $categoria = $producto['nombreCategoria'];
               }
               echo '<div class="producto">';
@@ -79,24 +104,7 @@
               }
               echo '</div>';
             }
-            echo '</div>';
-            /*foreach ($index->controlador->productos as $i => $producto){
-              if($i == 0){
-                echo '<div class="tabActivo">';
-                $categoria = $producto['nombreCategoria'];
-              }
-              if($categoria != $producto['nombreCategoria']){
-                echo '</div><div>';
-                $categoria = $producto['nombreCategoria'];
-              }
-              echo '<div class="producto">';
-              echo '<div><p>'.$producto['nombreProducto'].'</p><hr><p>'.$producto['precioProducto'].'€</p></div>';
-              if($producto['descripcionProducto']){
-                echo '<div>('.$producto['descripcionProducto'].')</div>';
-              }
-              echo '</div>';
-            }
-            echo '</div>';*/
+            echo '</div></div>';
           ?>
         </div>
       </section>
@@ -126,10 +134,10 @@
               <p><i class="bi bi-envelope-fill"></i><span><?php echo $index->controlador->negocio['emailNegocio'] ?></span></p>
             </div>
             <div class="social">
-              <a href=<?php echo '"'.$index->controlador->negocio['urlFacebookNegocio'].'"' ?>><i class="bi bi-facebook"></i></a>
-              <a href=<?php echo '"'.$index->controlador->negocio['urlInstagramNegocio'].'"' ?>><i class="bi bi-instagram"></i></a>
-              <a href=<?php echo '"'.$index->controlador->negocio['urlYouTubeNegocio'].'"' ?>><i class="bi bi-youtube"></i></a>
-              <a href=<?php echo '"'.$index->controlador->negocio['telefonoWhatsAppNegocio'].'"' ?>><i class="bi bi-whatsapp"></i></a>
+              <a href=<?php echo '"'.$index->controlador->negocio['urlFacebookNegocio'].'"' ?> target="_blank"><i class="bi bi-facebook"></i></a>
+              <a href=<?php echo '"'.$index->controlador->negocio['urlInstagramNegocio'].'"' ?> target="_blank"><i class="bi bi-instagram"></i></a>
+              <a href=<?php echo '"'.$index->controlador->negocio['urlYouTubeNegocio'].'"' ?> target="_blank"><i class="bi bi-youtube"></i></a>
+              <a href=<?php echo '"'.$index->controlador->negocio['telefonoWhatsAppNegocio'].'"' ?> target="_blank"><i class="bi bi-whatsapp"></i></a>
             </div>
           </div>
         </div>

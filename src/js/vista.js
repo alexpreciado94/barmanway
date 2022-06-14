@@ -1,17 +1,36 @@
+/**
+ * @file Módulo "vista.js" que maneja la vista que se muestra al cliente.
+ * @author alexpreciado94 <alexpreciado94@hotmail.com>
+ * @copyright © 2022 All Rights Reserved
+ */
+
+ /**
+  * @class Vista
+  * Captura los elementos HTML que se usarán al navegar por la app.
+  *
+  * @param  {Object} main Contexto principal donde se ejecuta la app.
+  *
+  */
 export class Vista {
   constructor(main){
     this.controlador = main;
 
-    this.tabs = document.querySelectorAll('.tabs ul li');
-    this.tabsText = document.querySelectorAll('.tabs>div');
-
     this.eventos();
   }
-  eventos(){
-    this.tabs.forEach((tab, i)=>{
-      this.tabs[i].addEventListener('click', this.activarTab.bind(this, i));
-    });
-  }
+  /**
+   * Asigna el método que debe activarse al realizar alguna acción que afecte a
+   * un elemento de la vista.
+   *
+   */
+  eventos(){}
+  /**
+   * Manejador para alternar la visibilidad de un elemento HTML cambiando
+   * la propiedad CSS que define su comportamiento visual.
+   *
+   * @param  {HTMLElement} elemento Referencia a la etiqueta HTML del elemento.
+   * @param  {boolean} sw Conmutador que indica si se debe mostrar u ocultar.
+   *
+   */
   mostrar(elemento, sw){
     if(sw){
       elemento.style.display = 'block';
@@ -19,15 +38,5 @@ export class Vista {
     if(!sw){
       elemento.style.display = 'none';
     }
-  }
-
-
-  activarTab(i){
-    this.tabs.forEach((tab, i)=>{
-      this.tabs[i].classList.remove('tabActivo');
-      this.mostrar(this.tabsText[i], false);
-    });
-    this.tabs[i].classList.add('tabActivo');
-    this.mostrar(this.tabsText[i], true);
   }
 }
