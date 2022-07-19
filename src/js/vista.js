@@ -15,6 +15,9 @@ export class Vista {
   constructor(main){
     this.controlador = main;
 
+    this.navButton = document.querySelector('nav > button');
+    this.nav = document.querySelector('nav ul');
+
     this.eventos();
   }
   /**
@@ -22,7 +25,9 @@ export class Vista {
    * un elemento de la vista.
    *
    */
-  eventos(){}
+  eventos(){
+    this.navButton.addEventListener('click', this.mostrar.bind(this, this.nav, true));
+  }
   /**
    * Manejador para alternar la visibilidad de un elemento HTML cambiando
    * la propiedad CSS que define su comportamiento visual.
@@ -32,8 +37,11 @@ export class Vista {
    *
    */
   mostrar(elemento, sw){
+    if(elemento.style.display != 'none' && sw){
+      sw = false;
+    }
     if(sw){
-      elemento.style.display = 'block';
+      elemento.style.display = 'flex';
     }
     if(!sw){
       elemento.style.display = 'none';

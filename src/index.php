@@ -22,6 +22,10 @@
     <title><?php echo $index->controlador->negocio['nombreNegocio'] ?></title>
     <link rel="stylesheet" href="./css/style.css">
     <style>
+      button:hover{
+        background-color: #<?php echo $index->controlador->negocio['colorNegocio'] ?>;
+        border: 4px solid #<?php echo $index->controlador->negocio['colorNegocio'] ?>;
+      }
       a{
         color: #<?php echo $index->controlador->negocio['colorNegocio'] ?>;
       }
@@ -49,17 +53,25 @@
       footer .contenedor .social a:hover{
         color: #<?php echo $index->controlador->negocio['colorNegocio'] ?>;
       }
+      @media (max-width: 768px){
+        nav ul{
+          background-color: #<?php echo $index->controlador->negocio['colorNegocio'] ?>;
+        }
+        nav ul li a:hover{
+          border-top: 5px solid #222222;
+        }
+      }
     </style>
   </head>
   <body>
     <header>
       <nav>
         <a href="#"><img src=<?php echo '"./img/imgdb/'.$index->controlador->negocio['idNegocio'].'/'.$index->controlador->negocio['logoNegocio'].'"' ?>></a>
-        <button name="button" (click)="mostrarMenu()"><i class="bi bi-list"></i></button>
+        <button><i class="bi bi-list"></i></button>
         <ul>
-          <li><a href="#inicio">INICIO</a></li>
-          <li><a href="#nosotros">NOSOTROS</a></li>
-          <li><a href="#carta">CARTA</a></li>
+          <li><a href="#">INICIO</a></li>
+          <li><a href="#infoNosotros">NOSOTROS</a></li>
+          <li><a href="#productos">CARTA</a></li>
           <li><a href="#contacto">CONTACTO</a></li>
         </ul>
       </nav>
@@ -69,6 +81,7 @@
         <img src=<?php echo '"./img/imgdb/'.$index->controlador->negocio['idNegocio'].'/'.$index->controlador->negocio['imgInicioNegocio'].'"' ?>>
         <img src=<?php echo '"./img/imgdb/'.$index->controlador->negocio['idNegocio'].'/'.$index->controlador->negocio['logoInicioNegocio'].'"' ?>>
       </section>
+      <a id="infoNosotros"></a>
       <section id="nosotros">
         <div class="contenedor">
           <article>
@@ -85,6 +98,7 @@
       <section id="imgSection">
 
       </section>
+      <a id="productos"></a>
       <section id="carta">
         <div class="tabs">
           <?php

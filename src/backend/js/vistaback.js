@@ -40,6 +40,9 @@ export class VistaBack {
    *
    */
   mostrar(elemento, sw){
+    if(elemento.style.display != 'none' && sw){
+      sw = false;
+    }
     if(sw){
       elemento.style.display = 'flex';
     }

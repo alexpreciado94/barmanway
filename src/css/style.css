@@ -32,7 +32,7 @@ nav{
   width: 100%;
   padding: 0px 15px;
   background-color: #222222;
-  box-shadow: 3px 3px 5px gray;
+  box-shadow: 3px 3px 5px rgba(34, 34, 34, 0.8);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,8 +78,9 @@ p{
   text-align: justify;
 }
 button{
-  padding: 5px 8px;
-  margin-right: 10px;
+  height: inherit;
+  width: 10%;
+  margin: 0px;
   font-family: 'Permanent Marker', 'Arial';
   font-size: 1.5rem;
   font-weight: bold;
@@ -89,15 +90,19 @@ button{
   border-radius: 3px;
   cursor: pointer;
   transition: 0.3s;
-}
-button:hover{
-  color: white;
-  background-color: #00A0DF;
-  border: 4px solid #00A0DF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 a{
   transition: 0.3s;
 }
+#infoNosotros, #productos{
+  position: relative;
+  top: -8vh;
+  visibility: hidden;
+}
+
 /* ======================== HEADER ======================== */
 nav a img{
   height: 10vh;
@@ -143,19 +148,19 @@ nav > button{
 }
 #inicio img:nth-child(2){
   width: 40%;
-  filter: drop-shadow(3px 3px 5px gray);
+  filter: drop-shadow(3px 3px 5px rgba(34, 34, 34, 0.8));
   position: absolute;
 }
 
 /* ======================== DESCRIPCIÓN ======================== */
 #nosotros{
   padding: 15% 10%;
-  box-shadow: 3px 3px 5px gray;
+  box-shadow: 3px 3px 5px rgba(34, 34, 34, 0.8);
   justify-content: space-between;
 }
 #nosotros .contenedor{
   padding: 30px 2.5%;
-  box-shadow: 3px 3px 5px gray;
+  box-shadow: 3px 3px 5px rgba(34, 34, 34, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -275,7 +280,7 @@ footer{
   width: 100%;
   background-color: #222222;
   color: white;
-  box-shadow: 3px -3px 5px gray;
+  box-shadow: 3px -3px 5px rgba(34, 34, 34, 0.8);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -420,16 +425,24 @@ footer .last .yo{
     min-height: 10vh;
   }
   nav{
+    align-items: flex-start;
     flex-wrap: wrap;
+    padding: 0px;
+  }
+  nav a img{
+    height: 9vh;
+    margin: 0px 15px;
   }
   nav > button{
     display: block;
+    position: relative;
+    right: 15px;
   }
   nav ul{
     height: auto;
     width: 100%;
     margin: 0px;
-    background-color: #39D070;
+    border-top: 5px solid white;
     overflow-y: auto;
     display: none;
     flex-direction: column;
@@ -441,13 +454,7 @@ footer .last .yo{
     line-height: 10vh;
   }
   nav ul li a:hover{
-    background-color: #67CE89;
-    border-top: none;
-  }
-  nav ul li button{
-    margin: 20px;
-    background-color: #FDBD0D;
-    border: 4px outset #FDBD0D;
+    background-color: rgba(255, 255, 255 , 0.2);
   }
   #carta .tabs .producto div{
     font-size: 0.7rem;
